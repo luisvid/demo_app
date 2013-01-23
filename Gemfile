@@ -5,8 +5,16 @@ gem 'rails', '3.2.2'
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
-#gem 'sqlite3', :group => :development
-gem 'pg'
+
+group :development, :test do
+	gem 'sqlite3'
+end
+group :production do
+	gem 'pg'
+end
+# now you just need to remember to use bundle install 
+# –without production when you make changes to your Gemfile.
+# http://gembundler.com/bundle_install.html
 
 
 # Gems used only for assets and not required
